@@ -1,12 +1,17 @@
 
 const express = require('express')
 const app = express()
-const port = 3000
+
+//rutas
+
+//configuracion
+app.set('port',process.env.PORT || 3000);
+// middlewares
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(app.get('port'),() => {
+  console.log(`Server on port 3000`)
 })
