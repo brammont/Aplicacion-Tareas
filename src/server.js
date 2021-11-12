@@ -2,7 +2,10 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
-const indexRoutes = require('./routes/index')
+const indexRoutes = require('./routes/index');
+const mongoose = require('mongoose');
+
+//conexion a base de datos
 
 //configuracion
 app.set('port',process.env.PORT || 3000);
@@ -11,7 +14,9 @@ app.set('view engine','ejs');
 
 // middlewares
 app.use(morgan('dev'));
-app.use(express.urlencoded);
+app.use(express.urlencoded({
+    extended:false
+}));
 //rutas
 app.use('/',indexRoutes);
 //start server
