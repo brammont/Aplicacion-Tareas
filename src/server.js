@@ -6,6 +6,9 @@ const indexRoutes = require('./routes/index');
 const mongoose = require('mongoose');
 
 //conexion a base de datos
+mongoose.connect('mongodb://localhost/crud-mongo')
+    .then(db => console.log('DB connected'))
+    .catch(err => console.log(err))
 
 //configuracion
 app.set('port',process.env.PORT || 3000);
