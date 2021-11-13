@@ -23,7 +23,9 @@ router.get('/convertido/:id',async (req,res)=>{
 router.get('/editar/:id',async (req,res)=>{
     const {id}= req.params;
     const task = await Task.findById({_id:id});
-    res.render('edit');
+    res.render('edit',{
+        task
+    });
 });
 router.get('/delete/:id',async (req,res)=>{
     const {id}= req.params;
