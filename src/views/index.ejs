@@ -39,7 +39,7 @@
               <td> <%= tasks[i].description%></td>
               <td>
                 <a href="" class="btn btn-dark">Hecho</a>
-                <a href="" class="btn btn-danger">Borrar</a>
+                <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">Borrar</a>
                 <a href="" class="btn btn-info">Editar</a>
               </td>
             </tr>            
